@@ -5,6 +5,8 @@ int main() {
     int casasTorre = 5;    // A Torre move 5 casas para a direita
     int casasBispo = 5;    // O Bispo move 5 casas na diagonal (cima e direita)
     int casasRainha = 8;   // A Rainha move 8 casas para a esquerda
+    int casasCavaloVertical = 2;  // O Cavalo move 2 casas para baixo
+    int casasCavaloHorizontal = 1; // O Cavalo move 1 casa para a esquerda
 
     printf("=== Movimento da Torre (usando for) ===\n");
     // Simulação do movimento da Torre: 5 casas para a direita usando for
@@ -27,6 +29,25 @@ int main() {
         printf("Esquerda\n");
         contadorRainha++;
     } while (contadorRainha <= casasRainha);
+
+    printf("\n=== Movimento do Cavalo (usando loops aninhados) ===\n");
+    for (int direcao = 1; direcao <= 2; direcao++) {
+        if (direcao == 1) {
+            // Primeira direção: Movimento vertical (2 casas para baixo)
+            int passos = 0;
+            do {
+                printf("Baixo\n");
+                passos++;
+            } while (passos < casasCavaloVertical);
+        } else {
+            // Segunda direção: Movimento horizontal (1 casa para a esquerda)
+            int passos = 0;
+            do {
+                printf("Esquerda\n");
+                passos++;
+            } while (passos < casasCavaloHorizontal);
+        }
+    }
 
     return 0;
 }
